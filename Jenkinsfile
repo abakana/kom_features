@@ -27,7 +27,7 @@ pipeline {
             steps {
                 timestamps {
                     script {
-                        echo ${env.WORKSPACE}
+                        echo "${env.WORKSPACE}"
 					}
                 }
             }
