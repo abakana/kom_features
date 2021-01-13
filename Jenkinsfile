@@ -31,25 +31,7 @@ pipeline {
             steps {
                 timestamps {
                     script {
-  
-					}
-                }
-            }
-        }
-        stage("Запуск") {
-            steps {
-                timestamps {
-                    script {
-					
-					}
-                }
-            }
-        }
-        stage("Тестирование ADD") {
-            steps {
-                timestamps {
-                    script {
-                    
+                        echo "${env.WORKSPACE}"
 					}
                 }
             }
