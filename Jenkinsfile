@@ -28,8 +28,8 @@ pipeline {
                 timestamps {
                     script {
                         echo "123456789"
-                        "C:\Program Files\1cv8\8.3.18.1208\bin\1cv8.exe" CREATEINFOBASE "work.database"&&
-                        "C:\Program Files\1cv8\8.3.18.1208\bin\1cv8.exe" DESIGNER
+                        "C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe" CREATEINFOBASE "work.database"&&
+                        "C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe" DESIGNER
                         /F @"\work.database"
                         /ConfigurationRepositoryF "E:\1сработа\kom test\хранилище"
                         /ConfigurationRepositoryN "Администратор"
