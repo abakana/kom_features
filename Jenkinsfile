@@ -29,7 +29,7 @@ pipeline
                 timestamps {
                     script {
                         utils = new Utils()
-                        echo "123456789"
+                        echo "привет!"
 
                         returnCode = utils.cmd("""""C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe"" CREATEINFOBASE ""work.database""&&
                         ""C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe"" DESIGNER
