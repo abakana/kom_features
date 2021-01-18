@@ -32,7 +32,7 @@ pipeline
                         echo "привет!"
                         echo "${env.WORKSPACE}"
 
-                        returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" CREATEINFOBASE \"work.database\"''')
+                        returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8c.exe\" CREATEINFOBASE \"work.database\"''')
                         //&& \"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" DESIGNER /F \"\\work.database\" /ConfigurationRepositoryF \"E:\\1сработа\\kom test\\хранилище\" /ConfigurationRepositoryN \"Администратор\" /ConfigurationRepositoryP \"\" /ConfigurationRepositoryUpdateCfg -force /UpdateDBCfg  -Dunamic /Out report /DisableStartupMessages /DisableStartupDialogs''')
                         if (returnCode != 0) {
                             utils.raiseError("Возникла ошибка при создании базы ${base} в кластере ${serversql}")
