@@ -34,7 +34,7 @@ pipeline
 
                         returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" CREATEINFOBASE File=\"E:\\1сработа\\kom test\\sborka\\work.database\" && \"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" DESIGNER /F \"\\work.database\" /ConfigurationRepositoryF \"E:\\1сработа\\kom test\\хранилище\" /ConfigurationRepositoryN \"Администратор\" /ConfigurationRepositoryP \"\" /ConfigurationRepositoryUpdateCfg -force /UpdateDBCfg  -Dunamic /Out report /DisableStartupMessages /DisableStartupDialogs''')
                         if (returnCode != 0) {
-                            utils.raiseError("Возникла ошибка при создании базы ${base} в кластере ${serversql}")
+                            utils.raiseError("Возникла ошибка при создании базы в кластере")
                         }
                     }
                 }
