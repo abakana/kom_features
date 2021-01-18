@@ -19,7 +19,7 @@ pipeline {
         label "${(env.jenkinsAgent == null || env.jenkinsAgent == 'null') ? "master" : env.jenkinsAgent}"
     }
     options {
-        timeout(time: 8, unit: 'HOURS') 
+        timeout(time: 8, unit: 'HOURS')
         buildDiscarder(logRotator(numToKeepStr:'10'))
     }
     stages {
@@ -27,12 +27,23 @@ pipeline {
             steps {
                 timestamps {
                     script {
-                        echo "${env.WORKSPACE}"
-					}
+                        echo "123456789"
+                        "C:\Program Files\1cv8\8.3.18.1208\bin\1cv8.exe" CREATEINFOBASE "work.database"&&
+                        "C:\Program Files\1cv8\8.3.18.1208\bin\1cv8.exe" DESIGNER
+                        /F @"\work.database"
+                        /ConfigurationRepositoryF "E:\1сработа\kom test\хранилище"
+                        /ConfigurationRepositoryN "Администратор"
+                        /ConfigurationRepositoryP ""
+                        /ConfigurationRepositoryUpdateCfg -force
+                        /UpdateDBCfg  -Dunamic
+                        /Out report
+                        /DisableStartupMessages
+                        /DisableStartupDialogs
+                    }
                 }
             }
         }
-    }   
+    }
     post {
         always {
             script {
@@ -49,7 +60,6 @@ pipeline {
         }
     }
 }
-
 
 def dropDbTask(server1c, server1cPort, serverSql, infobase, admin1cUser, admin1cPwd, sqluser, sqlPwd) {
     return {
