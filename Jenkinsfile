@@ -32,8 +32,7 @@ pipeline
                         echo "привет!"
                         echo "${env.WORKSPACE}"
 
-                        returnCode = utils.cmd('''""C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe"" CREATEINFOBASE ""work.database""&&
-                        ""C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe"" DESIGNER
+                        returnCode = utils.cmd('''""C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe"" CREATEINFOBASE ""work.database"" && "C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe"" DESIGNER
                         /F ""\\work.database""
                         /ConfigurationRepositoryF ""E:\\1сработа\\kom test\\хранилище""
                         /ConfigurationRepositoryN ""Администратор""
@@ -48,21 +47,6 @@ pipeline
                         }
                     }
                 }
-            }
-        }
-    }
-    post {
-        always {
-            script {
-                if (currentBuild.result == "ABORTED") {
-                    return
-                }
-
-                dir ('build/out/allure') {
-                    writeFile file:'environment.properties', text:"Build=${env.BUILD_URL}"
-                }
-
-                allure includeProperties: false, jdk: '', results: [[path: 'build/out/allure']]
             }
         }
     }
