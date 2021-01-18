@@ -36,7 +36,7 @@ pipeline
                         /F ""\\work.database""
                         /ConfigurationRepositoryF ""E:\\1сработа\\kom test\\хранилище""
                         /ConfigurationRepositoryN ""Администратор""
-                        /ConfigurationRepositoryP """"
+                        /ConfigurationRepositoryP ""\n""
                         /ConfigurationRepositoryUpdateCfg -force
                         /UpdateDBCfg  -Dunamic
                         /Out report
