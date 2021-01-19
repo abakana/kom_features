@@ -29,12 +29,13 @@ pipeline
                 timestamps {
                     script {
                         utils = new Utils()
-                        echo "привет1S!"
-                        echo "${env.WORKSPACE}"
-
-                        returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" CREATEINFOBASE File=\"E:\\1сработа\\kom test\\sborka\\work.database\" && \"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" DESIGNER /F \"E:\\1сработа\\kom test\\sborka\\work.database\" /ConfigurationRepositoryF \"E:\\1сработа\\kom test\\хранилище\" /ConfigurationRepositoryN \"test\" /ConfigurationRepositoryP \"test\" /ConfigurationRepositoryUpdateCfg -force /UpdateDBCfg  -Dunamic /Out report /DisableStartupMessages /DisableStartupDialogs''')
+                         returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" CREATEINFOBASE File=\"E:\\1сработа\\kom test\\sborka\\work.database\"''')
                         if (returnCode != 0) {
-                            utils.raiseError("Возникла ошибка при создании базы в кластере")
+                        utils.raiseError("Возникла ошибка при создании базы в кластере, пытаюсь подключиться к созданной")
+                        }
+                        returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" DESIGNER /F \"E:\\1сработа\\kom test\\sborka\\work.database\" /ConfigurationRepositoryF \"E:\\1сработа\\kom test\\хранилище\" /ConfigurationRepositoryN \"test\" /ConfigurationRepositoryP \"test\" /ConfigurationRepositoryUpdateCfg -force /UpdateDBCfg  -Dunamic /Out report /DisableStartupMessages /DisableStartupDialogs''')
+                        if (returnCode != 0) {
+                            utils.raiseError("Возникла ошибка при подключении к базе в кластере")
                         }
                     }
                 }
