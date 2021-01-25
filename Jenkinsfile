@@ -39,7 +39,11 @@ pipeline
                         }
                         returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" DESIGNER /F \"E:\\1сработа\\kom test\\sborka\\work.database\"  /ConfigurationRepositoryUpdateCfg -force /UpdateDBCfg  -Dunamic /Out report /DisableStartupMessages /DisableStartupDialogs /LoadCfg \"E:\\1сработа\\kom test\\piline\\cfe\\ОтключениеПроверкиЛицензии.cfe" -Extension \"ОтключениеЛицензирования\"''')
                         if (returnCode != 0) {
-                            utils.raiseError("Возникла ошибка при подключении к базе в кластере")
+                            utils.raiseError("Возникла ошибка при подключении расширения")
+                        }
+                       returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" ENTERPRISE /F \"E:\\1сработа\\kom test\\sborka\\work.database\" /Execute \"E:\\1сработа\\kom test\\piline\\fixtures\\fixtures.epf\"''')
+                        if (returnCode != 0) {
+                            utils.raiseError("Возникла ошибка настройке расширения")
                         }
                     }
                 }
