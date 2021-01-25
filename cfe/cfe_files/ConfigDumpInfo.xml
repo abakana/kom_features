@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.11">
+	<ConfigVersions>
+		<Metadata name="Configuration.ОтключениеПроверкиЛицензии" id="ebb45d6c-1240-4f4c-ba7c-4a3ef0fa77b8" configVersion="e4ee9b85b904bb99f6967b00d4e47700c68a8108"/>
+		<Metadata name="Configuration.ОтключениеПроверкиЛицензии.OrdinaryApplicationModule" id="1e369e87-ff51-463d-84d9-b9d33624b4d6.0" configVersion="7a3ae0e33b4ad0a08f12af527ae018782326c75d"/>
+		<Metadata name="Language.Русский" id="021c463d-c7a1-46e9-b609-995925c1d8ac" configVersion="999d3f0ed592f869bad72742145e3350c6416c20"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
