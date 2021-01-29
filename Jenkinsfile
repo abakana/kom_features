@@ -45,10 +45,18 @@ pipeline
                         //if (returnCode != 0) {
                         //    utils.raiseError("Возникла ошибка при подключении расширения")
                         //}
-                       //returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" ENTERPRISE /F \"E:\\1сработа\\kom test\\sborka\\work.database\" /Execute \"E:\\1сработа\\kom test\\piline\\fixtures\\fixtures.epf\"''')
-                       //if (returnCode != 0) {
-                       //     utils.raiseError("Возникла ошибка настройки базы")
-                       //}
+                       returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" ENTERPRISE /F \"E:\\1сработа\\kom test\\sborka\\work.database\"''')
+                       if (returnCode != 0) {
+                            utils.raiseError("Не удалось запустить первый раз")
+                       }
+                       returnCode = utils.cmd('''-n 10 localhost > Null''')
+                       if (returnCode != 0) {
+                            utils.raiseError("Пауза не удалась")
+                       }
+                       returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" ENTERPRISE /F \"E:\\1сработа\\kom test\\sborka\\work.database\"  /N "Администратор" /P "" /Execute \"E:\\1сработа\\kom test\\piline\\fixtures\\fixtures.epf\"''')
+                       if (returnCode != 0) {
+                            utils.raiseError("Возникла ошибка настройки базы")
+                       }
                     }
                 }
             }
