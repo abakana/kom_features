@@ -45,7 +45,7 @@ pipeline
                        if (returnCode != 0) {
                             utils.raiseError("Не удалось запустить первый раз")
                        }
-                       returnCode = utils.cmd('''-n 10 localhost > Null''')
+                       returnCode = utils.cmd('''ping -n 10 localhost > Null''')
                        if (returnCode != 0) {
                             utils.raiseError("Пауза не удалась")
                        }
