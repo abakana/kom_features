@@ -53,7 +53,7 @@ pipeline
                        if (returnCode != 0) {
                             utils.raiseError("Возникла ошибка настройки базы")
                        }
-                       returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" ENTERPRISE /F \"E:\\1сработа\\kom test\\sborka\\work.database\"  /N "Администратор" /P "" /Execute \"E:\\1сработа\\Git\\xUnit\\xddTestRunner.epf\" /C \"xddRun ЗагрузчикКаталога ""E:\tests\""; xddShutdown;\"''')
+                       returnCode = utils.cmd('''\"C:\\Program Files\\1cv8\\8.3.18.1208\\bin\\1cv8.exe\" ENTERPRISE /F \"E:\\1сработа\\kom test\\sborka\\work.database\"  /N "Администратор" /P "" /Execute \"E:\\1сработа\\Git\\xUnit\\xddTestRunner.epf\" /C \"xddRun ЗагрузчикКаталога ""E:\\tests\\"";  xddReport ГенераторОтчетаAllureXML ""E:\\1сработа\\kom test\\reports\\report-allure.xml""; xddShutdown;\"''')
                        if (returnCode != 0) {
                             utils.raiseError("Возникла ошибка запуска обработки xUnit")
                        }
@@ -62,7 +62,7 @@ pipeline
             }
         }
     }
-    
+
 post {
         always {
             script {
