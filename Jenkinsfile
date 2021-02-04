@@ -61,7 +61,23 @@ pipeline
                 }
             }
         }
+
+post {
+        always {
+            script {
+                if (currentBuild.result == "ABORTED") {
+                    return
+                }
+
+                dir ('E:\\1сработа\\kom test\\reports') {
+                    writeFile file:'environment.properties', text:"Build=${env.BUILD_URL}"
+                }
+
+                allure includeProperties: false, jdk: '', results: [[path: 'E:\\1сработа\\kom test\\reports']]
+            }
+        }
     }
+
 }
 
 def dropDbTask(server1c, server1cPort, serverSql, infobase, admin1cUser, admin1cPwd, sqluser, sqlPwd) {
