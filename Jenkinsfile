@@ -61,7 +61,8 @@ pipeline
                 }
             }
         }
-
+    }
+    
 post {
         always {
             script {
