@@ -8,6 +8,7 @@ pipeline
     stages {
         stage("Подготовка") {
             steps {
+                echo "нe привет"
              }
         }
     }
