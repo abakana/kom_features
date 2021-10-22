@@ -1,16 +1,14 @@
-pipeline
-{
-
+/* groovylint-disable-next-line CompileStatic */
+pipeline {
     agent {
         label any
     }
 
     stages {
-        stage("Подготовка") {
+        stage('test') {
             steps {
-                echo "нe привет"
-             }
+                echo 'nu privet'
+            }
         }
     }
 }
-                
