@@ -1,3 +1,8 @@
+@Library("shared-libraries")
+import io.libs.SqlUtils
+import io.libs.ProjectHelpers
+import io.libs.Utils
+
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
      agent any
