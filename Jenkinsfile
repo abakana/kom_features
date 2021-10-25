@@ -3,9 +3,13 @@ pipeline {
      agent any
 
     stages {
+        stage('Start') {
+            steps {
+                echo 'nu start'
+            }
         stage('test') {
             steps {
-                echo 'nu privet'
+                echo 'nu test'
             }
         }
     }
