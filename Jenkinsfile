@@ -7,6 +7,7 @@ pipeline {
             steps {
                 echo 'nu start'
             }
+        }
         stage('test') {
             steps {
                 echo 'nu test'
